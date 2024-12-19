@@ -1,4 +1,5 @@
 **Brewery Search API Test Suite**
+
 This repository contains the automated test suite for the Brewery Search API, which allows users to search for breweries
 based on a search term. The tests are written using the REST-assured library for API testing in Java.
 
