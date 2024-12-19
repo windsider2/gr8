@@ -1,8 +1,5 @@
 import io.restassured.RestAssured;
-import io.restassured.filter.log.RequestLoggingFilter;
-import io.restassured.filter.log.ResponseLoggingFilter;
 import io.restassured.module.jsv.JsonSchemaValidator;
-import io.restassured.response.Response;
 import org.hamcrest.Matcher;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.DataProvider;
@@ -20,7 +17,6 @@ public class BrewerySearchTest {
 
     @Test
     public void validateResponseSchema() {
-
         given()
                 .queryParam("query", "san diego")
                 .when()
@@ -47,20 +43,18 @@ public class BrewerySearchTest {
 
     @Test(dataProvider = "paginationCases")
     public void validatePagination(Object perPage, int expectedStatusCode, int expectedSize) {
-        Response response = given()
+        given()
                 .queryParam("query", "san diego")
                 .queryParam("per_page", perPage)
                 .when()
-                .get();
-
-        response.then()
+                .get()
+                .then()
                 .statusCode(expectedStatusCode)
                 .body("size()", equalTo(expectedSize)); // Verify the size of the result
     }
 
     @Test
     public void validateResponseFields() {
-
         given()
                 .queryParam("query", "san diego")
                 .when()
@@ -77,7 +71,6 @@ public class BrewerySearchTest {
 
     @Test
     public void validateSearchSpecialBrand() {
-
         given()
                 .queryParam("query", "mikkeller brewing san diego")
                 .when()
@@ -91,7 +84,6 @@ public class BrewerySearchTest {
 
     @Test
     public void validateMissingQueryParameter() {
-
         given()
                 .when()
                 .get()
