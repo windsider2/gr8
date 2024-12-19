@@ -33,21 +33,37 @@ Potential Additional Tests
 To enhance coverage for the "Search for Breweries" API, the following tests can be added:
 
 Authorization and Security Tests
+
 Test endpoint behavior with missing or invalid API keys (if applicable).
+
 Validate the response headers for security best practices (e.g., Content-Security-Policy, X-Content-Type-Options).
+
 Performance and Load Testing
+
 Measure response time for various query sizes and parameters (e.g., query=san diego&per_page=100).
+
 Perform load testing with multiple concurrent requests to assess API stability.
+
 Localization Testing
+
 Test the API's ability to handle queries with international characters (e.g., "München", "Łódź").
+
 Ensure consistent behavior across different locales.
+
 Negative Test Cases
+
 Inject malicious inputs (e.g., SQL injection or XSS payloads) into the query parameter to verify API security.
+
 Test with overly large input values to check for proper error handling.
+
 Test for idempotency by sending the same request multiple times and verifying identical responses.
+
 Test for caching
+
 Dependency Tests
+
 Validate API behavior when dependent services (e.g., database) are down or unresponsive.
+
 Test for graceful degradation and error handling (e.g., HTTP 503 with retry logic).
 
 Test Automation for the "List Breweries" Method
@@ -55,6 +71,7 @@ Test Automation for the "List Breweries" Method
 Validate Response Schema: Ensure the response matches the expected JSON schema.
 
 Validate Pagination:
+
 Different per_page values (e.g., 1, 50, 100).
 
 Boundary values for per_page (e.g., 0, -1, Integer.MAX_VALUE).
