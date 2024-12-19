@@ -1,8 +1,8 @@
-#Brewery Search API Test Suite
+**Brewery Search API Test Suite**
 This repository contains the automated test suite for the Brewery Search API, which allows users to search for breweries
 based on a search term. The tests are written using the REST-assured library for API testing in Java.
 
-##Existing Tests
+**Existing Tests**
 
 1. Schema Validation
    Validates that the API response adheres to the defined schema (brewery-schema.json).
@@ -24,12 +24,12 @@ based on a search term. The tests are written using the REST-assured library for
 6. Missing Query Parameter
    Tests the behavior when the query parameter is omitted (should return an empty array or appropriate response).
 
-##How to Run Tests
+**How to Run Tests**
 Clone the repository.
 Ensure that Maven and Java are installed.
 Run the test suite using the following command: mvn test
 
-Potential Additional Tests
+**Potential Additional Tests**
 To enhance coverage for the "Search for Breweries" API, the following tests can be added:
 
 Authorization and Security Tests
@@ -66,7 +66,7 @@ Validate API behavior when dependent services (e.g., database) are down or unres
 
 Test for graceful degradation and error handling (e.g., HTTP 503 with retry logic).
 
-##Test Automation for the "List Breweries" Method
+**Test Automation for the "List Breweries" Method**
 
 Validate Response Schema: Ensure the response matches the expected JSON schema.
 
